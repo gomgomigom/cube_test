@@ -1,0 +1,138 @@
+:root {
+  /* color */
+  --front: rgba(0, 0, 0, 0);
+  --back: rgba(0, 0, 0, 0);
+  --right: rgba(0, 0, 0, 0);
+  --left: rgba(0, 0, 0, 0);
+  --top: rgba(0, 0, 0, 0);
+  --bottom: rgba(0, 0, 0, 0);
+  --bacground-color: black;
+
+  /* size */
+  --box-size: 20vw;
+}
+
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button,
+input,
+textarea {
+  font-size: 1rem;
+}
+button:focus,
+button:active,
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+  outline: none;
+  box-shadow: none;
+}
+ul,
+ol,
+li {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+/* body */
+
+/* cube */
+
+.cubeContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bacground-color);
+}
+
+.img-container {
+  width: 70%;
+  position: relative;
+}
+
+.landing {
+  width: 100%;
+}
+
+.cube-face {
+  width: inherit;
+  height: inherit;
+  transition: 13s;
+  position: static;
+  box-shadow: 0px 0px calc(var(--box-size) * 1) #59f;
+}
+
+.cube-face:hover {
+}
+
+.cube {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: calc(var(--box-size) * 0.2);
+  width: var(--box-size);
+  height: var(--box-size);
+  transform-style: preserve-3d;
+}
+
+.cube > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  border-radius: 2%;
+}
+
+.front {
+  transform: translateZ(calc(var(--box-size) * 0.5));
+  background: var(--front);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(calc(var(--box-size) * 0.5));
+  background: var(--back);
+}
+
+.left {
+  transform: rotatey(-90deg) translateZ(calc(var(--box-size) * 0.5));
+  background: var(--left);
+}
+
+.right {
+  transform: rotatey(90deg) translatez(calc(var(--box-size) * 0.5));
+  background: var(--right);
+}
+
+.top {
+  transform: rotatex(90deg) translateZ(calc(var(--box-size) * 0.5));
+  background: var(--top);
+}
+
+.bottom {
+  transform: rotatex(-90deg) translateZ(calc(var(--box-size) * 0.5));
+  background: var(--bottom);
+}
+
+.cube {
+  animation: rotate 7s linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+
+  to {
+    transform: rotateY(359deg) rotateX(359deg);
+  }
+}
