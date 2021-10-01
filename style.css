@@ -1,3 +1,5 @@
+/* Global */
+
 :root {
   /* color */
   --front: rgba(0, 0, 0, 0);
@@ -7,10 +9,28 @@
   --top: rgba(0, 0, 0, 0);
   --bottom: rgba(0, 0, 0, 0);
   --bacground-color: black;
-  --logo-gold: #d4af37;
+  --color-gold: #d4af37;
+  --color-gold-dark: #6b5818;
+  --color-black: black;
+
+  /* font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
 
   /* size */
   --box-size: 500px;
+  --border-radius: 5px;
+
+  /* time */
+  --animation-duration: 300ms;
 }
 
 /* Reset CSS */
@@ -18,15 +38,25 @@
   box-sizing: border-box;
   margin: 0;
 }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 button,
 input,
 textarea {
   font-size: 1rem;
+  background-color: transparent;
+  padding: 0;
+  border: none;
 }
+
 button:focus,
 button:active,
 input:focus,
@@ -50,8 +80,42 @@ li {
   max-width: 1200px;
 }
 
-/* cube */
+/* Navbar */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bacground-color);
+  color: var(--color-gold);
+}
 
+.navbar__banner-img {
+  width: 250px;
+}
+
+.navbar__menu-list {
+  display: flex;
+}
+
+.navbar__menu .navbar__btn {
+  color: var(--color-gold);
+  padding: 10px 20px;
+  font-size: var(--font-regular);
+  margin: 5px;
+  transition: all var(--animation-duration) ease;
+}
+
+.navbar__btn:hover {
+  background-color: var(--color-gold-dark);
+  border-radius: var(--border-radius);
+}
+
+.navbar__toggle {
+  font-size: 40px;
+  display: none;
+}
+
+/* cube */
 #landing {
   width: 100%;
   height: auto;
@@ -59,7 +123,7 @@ li {
   flex-direction: column;
   justify-content: center;
   padding: 100px 50px;
-  color: var(--logo-gold);
+  color: var(--color-gold);
   align-items: center;
   background-color: var(--bacground-color);
 }
